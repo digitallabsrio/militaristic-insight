@@ -1,0 +1,3 @@
+list_of_potential_dups = ['x', 'y', '1', '3', 3, 'z', 'y']
+list_of_uniques = list(set(list_of_potential_dups))
+print(list_of_uniques)

@@ -1,0 +1,2 @@
+def squared(x):
+    return x*x   # or x**2. Remember x^2 won't work!

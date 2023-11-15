@@ -1,0 +1,3 @@
+text = 'Quick brown fox'
+text = text.upper()
+print(text)

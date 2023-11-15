@@ -1,0 +1,6 @@
+for elapsed_time in x_values:
+    accel = 51.76 # ft/s^2
+    alt = altitude(elapsed_time, accel)
+    # Dynamic pressure q = 0.5 * density * velocity^2
+    q = 0.5 * density(alt) * velocity(elapsed_time, accel) ** 2
+    y_values.append(q)

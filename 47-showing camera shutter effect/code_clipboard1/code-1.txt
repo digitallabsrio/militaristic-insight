@@ -1,0 +1,11 @@
+bentprop[frame] = propeller[frame]
+shutter_pan = [f for f in range(frame, min(frame + 3, height - 3))]
+colors = ("white", "black", "red", "blue")
+rgbcolors = np.array(list(map(root.winfo_rgb, colors))) / 256
+composite = np.maximum.reduce((backgnd, propeller * 1,
+                              bentprop * 2))
+composite[shutter_pan] = 3
+rgb = rgbcolors.astype(np.uint8)[composite]
+image = ImageTk.PhotoImage(Image.fromarray(rgb, mode="RGB"))
+stage.config(image=image)
+root.update()

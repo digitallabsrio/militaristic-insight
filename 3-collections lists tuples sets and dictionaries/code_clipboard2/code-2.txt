@@ -1,0 +1,28 @@
+x = ['a', 'b', 'c']
+print("x -->", x)
+print('len(x) -->', len(x))
+print("x.append('d') -->", x.append('d'))
+print("x -->", x)
+print('x[0] -->', x[0])
+print('x[-1] -->', x[-1])
+print('x[2:] -->', x[2:])
+print('x[:2] -->', x[:2])
+print("x.insert(2, 'f') -->", x.insert(2, 'f'))
+print("x -->", x)
+print("x.remove('f') -->", x.remove('f'))
+print("x -->", x)
+print("x.count('a') -->", x.count('a'))
+print("x.pop(0) -->", x.pop(0))
+print("x -->", x)
+print("x.insert(0, 'a') -->", x.insert(0, 'a'))
+print("x -->", x)
+print("x.pop(0) -->", x.pop(0))
+print("x -->", x)
+print("x.index('d') -->", x.index('d'))
+y = [11, 22, 33]
+print('Enumerating:')
+for index, item in enumerate(y):
+    print('  ', index, item)
+list1 = [1, 2, 3, 4]
+list2 = list1.copy()
+print('list2 copy -->', list2)

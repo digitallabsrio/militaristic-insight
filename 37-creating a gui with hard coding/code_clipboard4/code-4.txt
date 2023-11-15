@@ -1,0 +1,16 @@
+def convert_mpa_to_psi(number: str, field: tk.Label):
+    """
+    Convert MPa to PSI with the conversion factor 
+    1 MPa = 145.038 PSI
+    :param number: str number to cast as float and convert to psi
+    :param field: The Label to update with the calculated number
+    :return: None
+    """
+    mpa_to_psi = 145.038
+    try:
+        toreturn = float(number.replace(',' '')) * mpa_to_psi
+        field.configure(text='{:,.2f}'.format(toreturn),
+                        relief="sunken")
+    except ValueError:
+        toreturn = 'NaN'
+        field.configure(text='{}'.format(toreturn), relief="sunken")

@@ -1,0 +1,11 @@
+first_units = tk.StringVar()
+first_units.set('Pa')
+units_one = tk.Entry(app, borderwidth=2, relief="sunken", 
+                     textvariable=first_units, width=10)
+units_one.grid(row=1, column=3)
+
+second_units = tk.StringVar()
+second_units.set('Pa')
+units_two = tk.Entry(app, borderwidth=2, relief="sunken", 
+                     textvariable=second_units, width=10)
+units_two.grid(row=3, column=3)

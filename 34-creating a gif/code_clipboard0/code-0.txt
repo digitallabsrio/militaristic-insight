@@ -1,0 +1,3 @@
+from matplotlib.animation import PillowWriter
+writer = PillowWriter(fps=30) # how many frames per second
+myAnimation.save('/Users/Alex/Desktop/myAnimation.gif', writer=writer)

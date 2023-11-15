@@ -1,0 +1,13 @@
+import openpyxl
+workbook = openpyxl.Workbook()
+worksheet = workbook.active  # or worksheet = workbook['sheet1']
+
+# directly assign a cell a value
+worksheet["A1"] = 'Start Here'
+# or 
+worksheet.cell(row=1, column=1, value="Start Here")
+
+# get the value of a cell
+x = worksheet["A1"].value
+# or
+x = worksheet.cell(row=1, column=1).value

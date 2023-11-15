@@ -1,0 +1,14 @@
+for index, line in enumerate(all_text):
+    if index == 0:
+        plot_title = line.strip()
+    else:
+        try:
+            line = line.strip()
+            x, y = line.split(' ' * line.count(' ')) # line changed
+            x = float(x.strip())
+            y = float(y.strip())
+            if x <= 1.0 and y <= 1.0:                # line changed
+                x_coordinates.append(x)
+                y_coordinates.append(y)
+        except ValueError:
+            continue

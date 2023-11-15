@@ -1,0 +1,2 @@
+text = "Quick brown fox"
+print(len(text))

@@ -1,0 +1,6 @@
+import pint
+ureg = pint.UnitRegistry()
+converter = ureg.Quantity
+x = converter(2.0, ureg.inches)
+y = x*12
+print(y)

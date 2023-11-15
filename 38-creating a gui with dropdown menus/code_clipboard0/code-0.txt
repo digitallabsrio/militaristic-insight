@@ -1,0 +1,12 @@
+pressure_options = ["Pa", "Ba", "bar", "atm", "psi", "ksi", "mmHg", 
+                    "cmHg", "inch_Hg_60F", "inch_H2O_39F", "inch_H2O_60F", 
+                    "feet_H2O", "cm_H2O"]
+first_units = tk.StringVar()
+first_units.set(pressure_options[0])
+units_one = tk.OptionMenu(app, first_units, *pressure_options)
+units_one.grid(row=1, column=3)
+
+second_units = tk.StringVar()
+second_units.set(pressure_options[0])
+units_two = tk.OptionMenu(app, second_units, *pressure_options)
+units_two.grid(row=3, column=3)

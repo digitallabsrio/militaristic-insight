@@ -1,0 +1,23 @@
+import numpy as np
+from PyAstronomy import pyasl
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+import mpl_toolkits.mplot3d.axes3d as p3
+
+orbit = pyasl.KeplerEllipse(a=1.0, per=1.0, e=0.5, Omega=0.0,
+                            i=10.0, w=0.0)
+
+t = np.linspace(0, 4, 200)
+
+pos = orbit.xyzPos(t)
+
+plt.plot(0, 0, 'bo', markersize=9, label="Earth")
+
+plt.plot(pos[::, 1], pos[::, 0], 'k-', label="Satellite Trajectory")
+
+plt.plot(pos[0, 1], pos[0, 0], 'r*', label="Periapsis")
+
+plt.legend(loc="upper right")
+plt.title('Orbital Simulation')
+#plt.show()
+plt.savefig("output/chap5_1.png")

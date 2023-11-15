@@ -1,0 +1,3 @@
+a = 5
+y = squared2(a)
+print(type(y))

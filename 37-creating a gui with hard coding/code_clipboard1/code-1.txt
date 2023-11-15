@@ -1,0 +1,7 @@
+# Example 1
+mpa_text = tk.Label(app, text=" MPa")
+mpa_text.grid(row=1, column=3)
+# Example 2
+mpa_text = tk.Label(app, text=" MPa").grid(row=1, column=3)
+# Example 3
+tk.Label(app, text=" MPa").grid(row=1, column=3)

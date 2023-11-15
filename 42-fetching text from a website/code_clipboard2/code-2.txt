@@ -1,0 +1,24 @@
+import requests
+from bs4 import BeautifulSoup
+
+
+def scrape_website(address: str) -> str:
+    """
+    Scrape the properties website and return the response text
+    :param address: URL of website to scrape
+    :return: str as response.text
+    """
+    headers = {'user-agent': "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:74.0) Gecko/20100101 Firefox/74.0"}
+
+    r = requests.get(address, headers=headers)
+    return r.text
+
+url = "https://www.engineeringtoolbox.com/properties-aluminum-pipe-d_1340.html"
+website_text = scrape_website(url)
+
+soup = BeautifulSoup(website_text, 'lxml')
+
+table = soup.find('table', class_="large tablesorter")
+for row in table:
+    for index, tr in enumerate(row):
+        print(index, tr)

@@ -1,0 +1,4 @@
+speed_of_car = 5
+speed_of_second_car = speed_of_car
+speed_of_car = 7
+print(speed_of_second_car)

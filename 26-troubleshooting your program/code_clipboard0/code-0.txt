@@ -1,0 +1,34 @@
+# Option 1
+for line in all_text:
+    line = line.strip()
+    if line:
+        if len(line.split('     ')) == 1:
+            plot_title = line
+        else:
+            x, y = line.split('     ')
+            x_coordinates.append(float(x.strip()))
+            y_coordinates.append(float(y.strip()))
+# Option 2
+found_title = False
+for line in all_text:
+    line = line.strip()
+    if len(line.split('     ')) == 1 and not found_title:
+        plot_title = line
+        found_title = True
+
+    else:
+        x, y = line.split('     ')
+        x_coordinates.append(float(x.strip()))
+        y_coordinates.append(float(y.strip()))
+# Option 3
+for index, line in enumerate(all_text):
+    if index == 0:
+        plot_title = line.strip()
+    else:
+        try:
+            line = line.strip()
+            x, y = line.split('     ')
+            x_coordinates.append(float(x.strip()))
+            y_coordinates.append(float(y.strip()))
+        except ValueError:
+            continue

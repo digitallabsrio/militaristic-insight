@@ -1,0 +1,3 @@
+def knots_to_ftpersec(speed):  
+# speed is the user input and is in knots 
+    return speed * 1.68781

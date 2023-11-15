@@ -1,0 +1,2 @@
+x = knots_to_ftpersec(100.0)
+print('100.0 knots is {} fps'.format(x))

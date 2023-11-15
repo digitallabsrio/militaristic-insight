@@ -1,0 +1,14 @@
+def plot_airfoil(x_coordinates: list, y_coordinates: list, plot_title: str) -> None:
+    """
+    Plot the airfoil coordinates given the list of coordinates
+
+    :param x_coordinates: list of airfoil's x coordinates
+    :param y_coordinates: list of airfoil's y coordinates
+    :param plot_title: str to title as the plot's title
+    :return: None
+    """
+    plt.plot(x_coordinates, y_coordinates, 'k-')
+
+    plt.title('{} airfoil'.format(plot_title))
+    plt.grid(None)
+    plt.show()

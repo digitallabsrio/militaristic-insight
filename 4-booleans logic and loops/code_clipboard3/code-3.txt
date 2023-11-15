@@ -1,0 +1,6 @@
+x = 1
+y = 10
+if (x > 3) and (y <= 10):
+    print(x, y)
+else:
+    print('x <= 3 or y > 10'.format(x, y))

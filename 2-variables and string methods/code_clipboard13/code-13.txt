@@ -1,0 +1,9 @@
+text = 'Quick brown fox'
+text = text.upper().replace(' ', '_').lower()
+print(text)
+# is the same as
+text = 'Quick brown fox'
+text = text.upper()
+text = text.replace(' ', '_')
+text = text.lower()
+print(text)

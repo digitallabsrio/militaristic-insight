@@ -1,0 +1,10 @@
+def scrape_website(address: str) -> str:
+    """
+    Scrape the properties website and return the response text
+    :param address: URL of website to scrape
+    :return: str as response.text
+    """
+    headers = {'user-agent': "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:74.0) Gecko/20100101 Firefox/74.0"}
+
+    r = requests.get(address, headers=headers)
+    return r.text

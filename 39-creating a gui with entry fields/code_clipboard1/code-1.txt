@@ -1,0 +1,30 @@
+def calculate(number: str, unit1: str, unit2: str, field: tk.Label) -> None:
+    """
+    Cast number as float and convert it from one unit to another
+
+    :param number: str, number to attempt to cast to float and 
+                   convert from unit1 to unit2
+    :param unit1: str, choice from dropdown menu of pressures
+    :param unit2: str, choice from dropdown menu of pressures
+    :param field: tk.Label to update with the calculated number
+    :return: None
+    """
+
+    try:
+        number = float(number.replace(',', ''))
+        ureg = pint.UnitRegistry()
+        converter = ureg.Quantity
+
+        intial_value = converter(number, ureg(unit1))
+        final_value = intial_value.to(unit2)
+        field.configure(text='{:,.2f}'.format( 
+                        final_value.magnitude), relief="sunken")
+    except ValueError:
+        toreturn = 'Input a number'
+        field.configure(text='{}'.format(toreturn), relief="sunken")
+    except pint.errors.UndefinedUnitError:
+        toreturn = 'Unrecognized unit'
+        field.configure(text='{}'.format(toreturn), relief="sunken")
+    except pint.errors.DimensionalityError:
+        toreturn = 'Check units'
+        field.configure(text='{}'.format(toreturn), relief="sunken")

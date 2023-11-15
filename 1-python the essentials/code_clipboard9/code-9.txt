@@ -1,0 +1,5 @@
+'this is a string'
+
+"this is also a string"
+
+"this will return an error'

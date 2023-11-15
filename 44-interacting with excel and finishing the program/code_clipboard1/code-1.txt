@@ -1,0 +1,16 @@
+row_counter = 1
+column_counter = 1
+for row in info:
+    # row represents each "line" or "row" of the table we scraped
+    for cell in row:
+        # cell represents each column or cell in the row
+        worksheet.cell(row=row_counter, column=column_counter,
+                       value=cell)
+        # now increase the column counter variable by 1
+        column_counter += 1
+    """
+    at this indentation, we need to reset the column variable to
+    1 and increment the row variable by 1
+    """
+    column_counter = 1
+    row_counter += 1

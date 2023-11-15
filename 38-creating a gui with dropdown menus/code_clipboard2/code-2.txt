@@ -1,0 +1,4 @@
+converter = ureg.Quantity
+x = converter(4.0, ureg.meter)
+print("x.to('ft') -->", x.to('ft'))
+print("x.to('mph') -->", x.to('mph'))

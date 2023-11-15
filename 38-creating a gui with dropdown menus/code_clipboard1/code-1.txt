@@ -1,0 +1,6 @@
+converter = ureg.Quantity
+temp = converter(4.0, ureg.meter)
+print("temp -->", temp)
+x = converter(4.0, ureg.meter)
+print("x.magnitude -->", x.magnitude)
+print("x.units -->", x.units)

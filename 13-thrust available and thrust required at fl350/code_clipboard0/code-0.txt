@@ -1,0 +1,23 @@
+plt.subplot(3, 1, 3)
+rho_fl350 = 7.38E-4  # in slugs/ft^3
+cruise_velocity_fl350 = [450, 450]
+cruise_velocity_fl350_values = [9900, 14200]
+TA_fl350 = 0.7 * thrust * rho_fl350 / rho_sl
+x_vals_fl350 = [i for i in range(280, 695, 10)]
+tr_fl350 = [thrust_required(rho_fl350, knots_to_ftpersec(x), 
+                 wing_area, cd0, K, weight) for x in x_vals_fl350]
+
+plt.plot(x_vals_fl350, tr_fl350, 'k-', label=r"$T_R$ at FL350")
+y_coords_fl350 = [TA_fl350 for _ in x_vals_fl350]
+plt.plot(x_vals_fl350, y_coords_fl350, 'k--',
+          label=r"$T_A$ at FL350 ({:,.0f} lb)".format(TA_fl350))
+
+plt.plot(cruise_velocity_fl350, cruise_velocity_fl350_values, 'b-.',
+         label="Cruise Velocity ({} knots)".format(
+                                         cruise_velocity_fl350[0]))
+
+plt.xlabel('Velocity (knots)')
+plt.ylabel('Thrust (lb)')
+plt.xlim(50, 1550)
+plt.legend(loc='lower right')
+plt.show()

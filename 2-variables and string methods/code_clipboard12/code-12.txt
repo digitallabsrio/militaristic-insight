@@ -1,0 +1,16 @@
+x = 'hello'
+print('len(x) -->', len(x))
+print('x.upper() -->', x.upper())
+print('x[0] -->', x[0])
+print('x[-1] -->', x[-1])
+print('x[2:] -->', x[2:])
+print('x[:2] -->', x[:2])
+print("'{} there'.format(x) -->", '{} there'.format(x))
+print('x.replace("l", "p") -->', x.replace("l", "p"))
+print('x.count("e") -->', x.count('e'))
+y = '   hello  '
+print('y.strip() -->', y.strip())
+print("','.join(x) -->", ','.join(x))
+print("' '.join(x) -->", ' '.join(x))
+print("x.index('e') -->", x.index('e'))
+print("x.index('ell') -->", x.index('ell'))

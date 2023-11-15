@@ -1,0 +1,53 @@
+import requests
+import matplotlib.pyplot as plt
+
+
+def plot_airfoil(x_coordinates: list, y_coordinates: list, plot_title: str) -> None:
+    """
+    Plot the airfoil coordinates given the list of coordinates
+
+    :param x_coordinates: list of airfoil's x coordinates
+    :param y_coordinates: list of airfoil's y coordinates
+    :param plot_title: str to title as the plot's title
+    :return: None
+    """
+    plt.plot(x_coordinates, y_coordinates, 'k-')
+
+    plt.title('{} airfoil'.format(plot_title))
+    plt.style.use('default')
+    #plt.show()
+    plt.savefig("output/chap4_2.png")
+
+
+def get_airfoil_coords(airfoil: str) -> tuple:
+    """
+    Get airfoil coords from UIUC website
+    https://m-selig.ae.illinois.edu/ads/coord/__.dat
+    :param airfoil: str of airfoil types
+    :return: tuple of ([x coords], [y coords], plot_title)
+    """
+    url = 'https://m-selig.ae.illinois.edu/ads/coord/{}.dat'.format(
+                                                   airfoil.lower())
+    response_text = requests.get(url).text
+    
+    all_text = response_text.split('\n')
+    x_coordinates, y_coordinates = [], []
+    plot_title = ''
+
+    for index, line in enumerate(all_text):
+        if index == 0:
+            plot_title = line.strip()
+        else:
+            try:
+                line = line.strip()
+                x, y = line.split('     ')
+                x_coordinates.append(float(x.strip()))
+                y_coordinates.append(float(y.strip()))
+            except ValueError:
+                continue
+    return x_coordinates, y_coordinates, plot_title
+
+
+air_foil = 'naca2412'
+x_values, y_values, title = get_airfoil_coords(air_foil)
+plot_airfoil(x_values, y_values, title)

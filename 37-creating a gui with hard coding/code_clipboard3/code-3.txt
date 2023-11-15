@@ -1,0 +1,6 @@
+tk.Label(app, text="").grid(row=4, column=2)
+
+convert_button = tk.Button(app, text="Convert",
+                 command=lambda: convert_mpa_to_psi(
+                 value_to_convert.get(), calculated_value),
+                 font=text_font)

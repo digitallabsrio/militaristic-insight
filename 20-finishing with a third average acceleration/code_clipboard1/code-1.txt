@@ -1,0 +1,6 @@
+plt.xlim(0, 150) # new!
+plt.xlabel('Time (s)')
+plt.ylabel('Pressure (psf)')
+plt.title('Dynamic pressure as a function of time')
+plt.legend()
+plt.show()

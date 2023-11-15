@@ -1,0 +1,21 @@
+table = soup.find('table', class_="large tablesorter")
+for thead in table:
+    for tr in thead:
+        if len(tr) == 6:
+          # this means we have the header row of the table
+            internal_list = []
+            for td in tr:
+                if td:
+                    internal_list.append(td.text)
+            toreturn.append(internal_list)
+        elif len(tr) == 13:
+            # this means we have the material row
+            internal_list = []
+            for td in tr:
+                if td and td.string != ' ':
+                    if str(td.string) == '\xa0':
+                        value = 'None'
+                    else:
+                        value = str(td.string)
+                    internal_list.append(value)
+            toreturn.append(internal_list)

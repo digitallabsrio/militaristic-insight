@@ -1,0 +1,19 @@
+def density(height: float) -> float:
+    """
+    Returns the air density in slug/ft^3 based on altitude
+    Equations from https://www.grc.nasa.gov/www/k-12/rocket/atmos.html
+    :param height: Altitude in feet
+    :return: Density in slugs/ft^3
+    """
+    if height < 36152.0:
+        temp = 59 - 0.00356 * height
+        p = 2116 * ((temp + 459.7)/518.6)**5.256
+    elif 36152 <= height < 82345:
+        temp = -70
+        p = 473.1*np.exp(1.73 - 0.000048*height)
+    else:
+        temp = -205.05 + 0.00164 * height
+        p = 51.97*((temp + 459.7)/389.98)**-11.388
+
+    rho = p/(1718*(temp+459.7))
+    return rho

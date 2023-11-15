@@ -1,0 +1,5 @@
+app = tk.Tk()
+app.title('Unit Converter')
+
+app.geometry('350x200')
+# dimensions are X by Y which means width and height in pixels

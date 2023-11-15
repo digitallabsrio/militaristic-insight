@@ -1,0 +1,30 @@
+def create_spreadsheet(info: list) -> None:
+    """
+    Create a spreadsheet with the info list. Assumes that info[0] is
+    a list of column headers
+
+    :param info: All info to be written to the spreadsheet
+    :return: None
+    """
+    workbook = openpyxl.Workbook()
+    worksheet = workbook.active
+    worksheet.title = 'aluminum'
+    destination = '/Users/Alex/Desktop/aluminum_properties.xlsx'
+
+    row_counter = 1
+    column_counter = 1
+    for row in info:
+       # row represents each "line" or "row" of the table we scraped
+        for cell in row:
+            # cell represents each column or cell in the row
+            try:
+                text = float(cell)
+            except ValueError:
+                text = cell
+            worksheet.cell(row=row_counter, column=column_counter,
+                           value=text)
+            column_counter += 1
+        column_counter = 1
+        row_counter += 1
+
+    workbook.save(filename=destination)

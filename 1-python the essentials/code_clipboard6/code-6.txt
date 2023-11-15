@@ -1,0 +1,7 @@
+print("2**4 -->", 2**4)  # exponentiation
+
+print("15 % 6 -->", 15 % 6)  # remainder or "modulus"
+
+print("20 // 7 -->", 20 // 7)  # floor division
+
+print("round(20/7, 3) -->", round(20/7, 3))  # rounding

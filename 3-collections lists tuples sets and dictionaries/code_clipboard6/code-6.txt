@@ -1,0 +1,2 @@
+conversion_dict = {'France': 'French', 'Germany': 'German', 'England': 'English'}
+print(conversion_dict['Germany'])

@@ -1,0 +1,25 @@
+text_font = ('Times New Roman', 14)
+
+tk.Label(app, text="Converter", font=("Times New Roman", 24)).grid(row=0, column=1, columnspan=2) 
+# makes the text span two columns in our GUI
+
+calculate_text = tk.Label(app, text="Convert ", font=text_font)
+calculate_text.grid(row=1, column=1)
+
+value_to_convert = tk.StringVar()
+input_field = tk.Entry(app, borderwidth=2, relief="sunken", 
+                   textvariable=value_to_convert, font=text_font)
+input_field.grid(row=1, column=2)
+
+mpa_text = tk.Label(app, text=" MPa", font=text_font)
+mpa_text.grid(row=1, column=3)
+
+into_text = tk.Label(app, text='into', font=text_font)
+into_text.grid(row=2, column=2)
+
+calculated_value = tk.Label(app, text='', borderwidth=2, 
+                            relief="groove", width=15, font=text_font)
+calculated_value.grid(row=3, column=2)
+
+psi_text = tk.Label(app, text=' psi', font=text_font)
+psi_text.grid(row=3, column=3)

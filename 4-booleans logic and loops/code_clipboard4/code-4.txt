@@ -1,0 +1,8 @@
+x = 1
+y = 10
+if x < 0 and y < 0:
+    print('x and y are both negative') 
+elif x > 0 and y > 0:
+    print('x and y are both positive')
+else:
+    print('one is positive and one is negative')

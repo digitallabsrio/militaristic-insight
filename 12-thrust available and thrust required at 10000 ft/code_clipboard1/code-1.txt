@@ -1,0 +1,13 @@
+plt.plot(x_vals_fl100, tr_fl100, 'k-', label=r"$T_R$ at FL100")
+
+plt.plot(x_vals_fl100, y_coords_fl100, 'k--',
+         label="$T_A$ at FL100 ({:,.0f} lb)".format(TA_fl100))
+
+plt.plot(cruise_velocity, cruise_velocity_fl100_values, 'b-.', 
+      label="Cruise Velocity ({} knots)".format(cruise_velocity[0]))
+
+plt.ylabel('Thrust (lbs)')
+plt.ylim(5000, 38000)
+plt.xlim(50, 1550)
+plt.legend(loc='lower right')
+plt.show()

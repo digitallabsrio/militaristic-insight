@@ -1,0 +1,9 @@
+def get_airfoil_coords(airfoil: str) -> tuple:
+    """
+    Get airfoil coords from UIUC website
+    https://m-selig.ae.illinois.edu/ads/coord/__.dat
+    :param airfoil: str of airfoil types
+    :return: tuple of ([x coords], [y coords], plot_title)
+    """
+    url = 'https://m-selig.ae.illinois.edu/ads/coord/{}.dat'.format(airfoil.lower())
+    response_text = requests.get(url).text

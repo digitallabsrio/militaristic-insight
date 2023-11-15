@@ -1,0 +1,22 @@
+y2_values = []
+for elapsed_time in x_values:
+    accel = 32.2
+    alt = altitude(elapsed_time, accel)
+    q = 0.5 * density(alt) * velocity(elapsed_time, accel) ** 2
+    y2_values.append(q)
+
+plt.plot(x_values, y2_values, 'k-',
+         label=r"a = 32.2 $\frac{ft}{s^2}$")
+
+max_val = max(y2_values)
+ind = y2_values.index(max_val)
+
+# Plot an arrow and text with the max value
+plt.annotate('{:2E} psf @ {} s'.format(max_val, x_values[ind]),
+             xy=(x_values[ind] + 3, max_val),
+             xytext=(x_values[ind] + 15, max_val + 1E5),
+             arrowprops=dict(facecolor='black', shrink=0.05),
+             )
+
+# plot the point of Max Q
+plt.plot(x_values[ind], max_val, 'rx')

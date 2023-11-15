@@ -1,0 +1,17 @@
+fig, ax = plt.subplots()
+
+# Plot the orbit (in cyan this time)
+plt.plot(pos[::, 1], pos[::, 0], 'c-.')
+
+# Create the red dot as a tuple, and start it at perigee
+red_dot, = plt.plot(pos[0][1], pos[0][0], 'ko')
+# note the "," after red_dot which creates a tuple
+
+def animate(i):
+    red_dot.set_data(pos[i][1], pos[i][0])
+    return red_dot,
+
+# create animation using the animate() function
+myAnimation = animation.FuncAnimation(fig, animate,
+                       frames=np.arange(0, len(t), 1), interval=40,
+                       blit=True, repeat=True)

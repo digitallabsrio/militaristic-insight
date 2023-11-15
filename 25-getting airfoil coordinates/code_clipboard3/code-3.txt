@@ -1,0 +1,3 @@
+text = 'this is some text'
+my_list = text.split('string that is not here')
+print(my_list)

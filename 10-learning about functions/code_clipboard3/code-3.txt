@@ -1,0 +1,7 @@
+def squared(x: float) -> float:
+    """
+    Takes x as a float and returns its square
+    :param x: float
+    :return x**2
+    """
+    return x*x

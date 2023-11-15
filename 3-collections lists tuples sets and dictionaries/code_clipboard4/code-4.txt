@@ -1,0 +1,3 @@
+list_with_duplicates = ['x', 'y', 'z', 'x', 'y', 'z']
+x = set(list_with_duplicates)
+print(x)

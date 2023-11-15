@@ -1,0 +1,3 @@
+def thrust_required(rho_inf, v_inf, s, cd0_, k, w):
+    cl = 2 * w / (rho_inf * v_inf ** 2 * s)
+    return 0.5 * rho_inf * v_inf ** 2 * s * (cd0_ + k * cl ** 2)

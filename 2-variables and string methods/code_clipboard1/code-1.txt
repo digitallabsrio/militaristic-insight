@@ -1,0 +1,4 @@
+x = 4
+print('x =', x)  # first method
+print('x = {}'.format(x))  # second method
+print(f'x = {x}')  # third method, called f-strings
